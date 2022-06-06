@@ -1,18 +1,18 @@
   SELECT  Count(Userproviderkey) as pocetKaretNaUcet, email, number, DefaultCustomerProfiles.Name
-  FROM [www.mhdrk.sk].[dbo].[Cards] 
-  JOIN  [www.mhdrk.sk].[dbo].[AspNetUsers] ON ASPNETUSERS.id = CARDS.UserProviderKey
-  JOIN  [www.mhdrk.sk].[dbo].CardDiscounts ON CARDDISCOUNTS.cardid = CARDS.id
-  JOIN  [www.mhdrk.sk].[dbo].DefaultCustomerProfiles ON DEFAULTCUSTOMERPROFILES.Id = CARDDISCOUNT.CustomerProfileId
+  FROM [MyDatabase].[dbo].[Table] 
+  JOIN  [MyDatabase].[dbo].[Table1] ON Table1.id = Table.UserProviderKey
+  JOIN  [MyDatabase].[dbo].Table2 ON Table2.cardid = Table.id
+  JOIN  [MyDatabase].[dbo].Table3 ON Table3.Id = Table2.CustomerProfileId
   WHERE 
 
   email in ('') and 
 
-  CARDS.state NOT IN ( '7', '3', '2') and 
-  CARDS.ExpirationUTC !< GETDATE() and 
-  CARDDISCOUNTS.State = '2'
+  Table.state NOT IN ( '7', '3', '2') and 
+  Table.ExpirationUTC !< GETDATE() and 
+  Table2.State = '2'
   
   
   
   
-  -----and CARDS.Borndate > '2006-06-02 00:00:00.000'
-  Group by email, number, DEFAULTCUSTOMERPROFILES.Name  order by email 
+  -----and Table.Borndate > '2006-06-02 00:00:00.000'
+  Group by email, number, Table3.Name  order by email 
