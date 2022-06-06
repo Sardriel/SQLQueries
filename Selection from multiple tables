@@ -1,11 +1,11 @@
 SELECT 
 
-	  cards.Name
-	  ,cards.token
-	  ,orders.VariableSymbol
-	  ,cards.UserProviderKey
+	  Table1.Name
+	  ,Table1.token
+	  ,Table2.VariableSymbol
+	  ,Table1.UserProviderKey
       
 FROM [MyDatabase].[dbo].[Table]
-JOIN MyDatabase.dbo.Table on Cardid = cards.id
-JOIN MyDatabase.dbo.Table on orderid = orders.id
+JOIN MyDatabase.dbo.Table1 on Cardid = Table1.id
+JOIN MyDatabase.dbo.Table2 on orderid = Table2.id
 WHERE orderid IN ()
