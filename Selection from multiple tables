@@ -8,4 +8,4 @@ SELECT
 FROM [kidsokeshop].[dbo].[OrderItems]
 JOIN kidsokeshop.dbo.cards on Cardid = cards.id
 JOIN kidsokeshop.dbo.orders on orderid = orders.id
-WHERE orderid IN (152576, 152617)
+WHERE orderid IN ()
