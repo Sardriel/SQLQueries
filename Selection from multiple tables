@@ -5,7 +5,7 @@ SELECT
 	  ,orders.VariableSymbol
 	  ,cards.UserProviderKey
       
-FROM [kidsokeshop].[dbo].[OrderItems]
-JOIN kidsokeshop.dbo.cards on Cardid = cards.id
-JOIN kidsokeshop.dbo.orders on orderid = orders.id
+FROM [MyDatabase].[dbo].[Table]
+JOIN MyDatabase.dbo.Table on Cardid = cards.id
+JOIN MyDatabase.dbo.Table on orderid = orders.id
 WHERE orderid IN ()
